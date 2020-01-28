@@ -11,7 +11,7 @@
                     <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Syze</th>
+                        <th>Size</th>
                         <th>Type</th>
                         <th>Amount</th>
                         <th>Color</th>

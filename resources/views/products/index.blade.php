@@ -6,10 +6,9 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Products</div>
+                    <div class="panel-heading">Produtos</div>
 
                     <div class="panel-body table-responsive">
-
                         <router-view name="ProductsIndex"></router-view>
                         <router-view></router-view>
                     </div>

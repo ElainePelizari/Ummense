@@ -24,3 +24,4 @@ Route::get('/usuario', function() {
 });
 
 Route::get('products', 'ProductsController@index')->name('products.index');
+

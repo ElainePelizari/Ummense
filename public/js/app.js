@@ -37528,6 +37528,19 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-axios/dist/vue-axios.min.js":
+/*!******************************************************!*\
+  !*** ./node_modules/vue-axios/dist/vue-axios.min.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(o){return typeof o}:function(o){return o&&"function"==typeof Symbol&&o.constructor===Symbol&&o!==Symbol.prototype?"symbol":typeof o};!function(){function o(e,t){if(!o.installed){if(o.installed=!0,!t)return void console.error("You have to install axios");e.axios=t,Object.defineProperties(e.prototype,{axios:{get:function(){return t}},$http:{get:function(){return t}}})}}"object"==( false?undefined:_typeof(exports))?module.exports=o: true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function(){return o}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):undefined}();
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/products/ProductsCreate.vue?vue&type=template&id=055505b0&":
 /*!**************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/products/ProductsCreate.vue?vue&type=template&id=055505b0& ***!
@@ -38076,7 +38089,7 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v("Name")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Syze")]),
+        _c("th", [_vm._v("Size")]),
         _vm._v(" "),
         _c("th", [_vm._v("Type")]),
         _vm._v(" "),
@@ -53189,37 +53202,45 @@ module.exports = function(module) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _components_products_ProductsIndex_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/products/ProductsIndex.vue */ "./resources/js/components/products/ProductsIndex.vue");
-/* harmony import */ var _components_products_ProductsCreate_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/products/ProductsCreate.vue */ "./resources/js/components/products/ProductsCreate.vue");
-/* harmony import */ var _components_products_ProductsEdit_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/products/ProductsEdit.vue */ "./resources/js/components/products/ProductsEdit.vue");
+/* harmony import */ var vue_axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-axios */ "./node_modules/vue-axios/dist/vue-axios.min.js");
+/* harmony import */ var vue_axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_products_ProductsIndex_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/products/ProductsIndex.vue */ "./resources/js/components/products/ProductsIndex.vue");
+/* harmony import */ var _components_products_ProductsCreate_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/products/ProductsCreate.vue */ "./resources/js/components/products/ProductsCreate.vue");
+/* harmony import */ var _components_products_ProductsEdit_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/products/ProductsEdit.vue */ "./resources/js/components/products/ProductsEdit.vue");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
-window.Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
+vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]); // window.Vue.use(VueRouter);
+
+
+
+Vue.use(vue_axios__WEBPACK_IMPORTED_MODULE_1___default.a, axios__WEBPACK_IMPORTED_MODULE_2___default.a);
 
 
 
 var routes = [{
   path: '/',
   components: {
-    productsIndex: _components_products_ProductsIndex_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    productsIndex: _components_products_ProductsIndex_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }
 }, {
   path: '/products/create',
-  component: _components_products_ProductsCreate_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+  component: _components_products_ProductsCreate_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
   name: 'createProduct'
 }, {
   path: '/products/edit/:id',
-  component: _components_products_ProductsEdit_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+  component: _components_products_ProductsEdit_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
   name: 'editProduct'
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
-  routes: routes
+  mode: 'history'
 });
-var app = new Vue({
+var app = new Vue(Vue.util.extend({
   router: router
-}).$mount('#app');
+})).$mount('#app');
 
 /***/ }),
 
@@ -53493,8 +53514,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/dev/ProjetoUmmense/ummense/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/dev/ProjetoUmmense/ummense/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/dev/Ummense/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/dev/Ummense/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
