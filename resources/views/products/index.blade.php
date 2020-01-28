@@ -10,7 +10,7 @@
 
                     <div class="panel-body table-responsive">
 
-                        <router-view name="productsIndex"></router-view>
+                        <router-view name="ProductsIndex"></router-view>
                         <router-view></router-view>
                     </div>
                 </div>
