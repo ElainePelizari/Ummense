@@ -21,7 +21,6 @@
                     <th>Tamanho</th>
                     <th>Quantidade</th>
                     <th>Cor</th>
-                    <th>Preço</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -29,11 +28,10 @@
     @foreach($prods as $prod)
                 <tr>
                     <td>{{$prod->id}}</td>
-                    <td>{{$prod->nome}}</td>
-                    <td>{{$prod->tamanho}}</td>
-                    <td>{{$prod->quantidade}}</td>
-                    <td>{{$prod->cor}}</td>
-                    <td>{{$prod->preco}}</td>
+                    <td>{{$prod->name}}</td>
+                    <td>{{$prod->size}}</td>
+                    <td>{{$prod->amount}}</td>
+                    <td>{{$prod->color}}</td>
 
                     <td>
                     <div>

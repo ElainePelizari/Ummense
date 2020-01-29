@@ -2,9 +2,8 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 import VueRouter from 'vue-router';
-vue.use(VueRouter);
 
-// window.Vue.use(VueRouter);
+window.Vue.use(VueRouter);
 
 import VueAxios from 'vue-axios';
 import axios from 'axios';
@@ -26,6 +25,6 @@ const routes = [
     {path: '/products/edit/:id', component: ProductsEdit, name: 'editProduct'},
 ]
 
-const router = new VueRouter({ mode: 'history' });
+const router = new VueRouter({ routes });
 
-const app = new Vue(Vue.util.extend({ router })).$mount('#app');
+const app = new Vue({ router }).$mount('#app');

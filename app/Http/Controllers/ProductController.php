@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Produtos;
+use App\Product;
 
-class ProdutoController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +19,8 @@ class ProdutoController extends Controller
 
     public function index()
     {
-        $prods = Produtos::all();
-        return view('produtos/produtos', compact('prods'));
+        $prods = Product::all();
+        return view('produtos/products', compact('prods'));
     }
 
     /**
@@ -30,7 +30,7 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        return view('produtos/novoProduto');
+        return view('produtos/newProduct');
     }
 
     /**
@@ -42,28 +42,27 @@ class ProdutoController extends Controller
     public function store(Request $request)
     {
         $regras = [
-            'nome'  => 'required|min:6',
-            'tamanho' => 'required',
-            'tipo' => 'required',
-            'quantidade' => 'required',
-            'cor' => 'required',
-            'preco' => 'required',
+            'name'  => 'required|min:6',
+            'size' => 'required',
+            'type' => 'required',
+            'amount' => 'required',
+            'color' => 'required',
+
         ];
         $mensagens = [ 
-            'nome.required' => 'O nome é requerido.',
-            'nome.min' => 'É necessário no mínimo 6 caracteres no nome.',
+            'name.required' => 'O nome é requerido.',
+            'name.min' => 'É necessário no mínimo 6 caracteres no nome.',
             'required' => 'O atributo :attribute não pode estar em branco.',
         ];
 
         $request->validate($regras, $mensagens);
 
-        $prod = new Produtos();
-        $prod->nome = $request->input('nome');
-        $prod->tamanho = $request->input('tamanho');
-        $prod->tipo = $request->input('tipo');
-        $prod->quantidade = $request->input('quantidade');
-        $prod->cor = $request->input('cor');
-        $prod->preco = $request->input('preco');
+        $prod = new Product();
+        $prod->name = $request->input('name');
+        $prod->size = $request->input('size');
+        $prod->type = $request->input('type');
+        $prod->amount = $request->input('amount');
+        $prod->color = $request->input('color');
         $prod->save();
 
         return redirect('produtos');
@@ -77,9 +76,9 @@ class ProdutoController extends Controller
      */
     public function show($id)
     {
-        $prod = Produtos::find($id);
+        $prod = Product::find($id);
         if(isset($prod)){
-            return view('produtos/detalhesProduto', compact('prod'));
+            return view('produtos/detailsProduct', compact('prod'));
         }
         return redirect('produtos');
     }
@@ -92,9 +91,9 @@ class ProdutoController extends Controller
      */
     public function edit($id)
     {
-        $prod = Produtos::find($id);
+        $prod = Product::find($id);
         if(isset($prod)){
-            return view('produtos/editarProduto', compact('prod'));
+            return view('produtos/editProduct', compact('prod'));
         }
         return redirect('produtos');
     }
@@ -108,14 +107,13 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $prod = Produtos::find($id);
+        $prod = Product::find($id);
         if(isset($prod)){
-            $prod->nome = $request->input('nome');
-            $prod->tamanho = $request->input('tamanho');
-            $prod->tipo = $request->input('tipo');
-            $prod->quantidade = $request->input('quantidade');
-            $prod->cor = $request->input('cor');
-            $prod->preco = $request->input('preco');
+            $prod->name = $request->input('name');
+            $prod->size = $request->input('size');
+            $prod->type = $request->input('type');
+            $prod->amount = $request->input('amount');
+            $prod->color = $request->input('color');
             $prod->save();
         }
         return redirect('produtos');
@@ -129,7 +127,7 @@ class ProdutoController extends Controller
      */
     public function destroy($id)
     {
-        $prod = Produtos::find($id);
+        $prod = Product::find($id);
         if(isset($prod)){
             $prod->delete();
         }

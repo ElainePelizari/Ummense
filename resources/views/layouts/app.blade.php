@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -39,11 +40,11 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item">
-                            <a  class="nav-link" href="{{ route('products.index') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <!-- <li class="nav-item">
+                            <a  class="nav-link" href="{{ route('products.index') }}">
                                 Produtos
                             </a>
-                            </li>
+                            </li> -->
 
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -67,7 +68,7 @@
                 </div>
             </div>
         </nav>
-        
+    
 
         <main class="py-4">
             @yield('content')
@@ -75,3 +76,4 @@
     </div>
 </body>
 </html>
+<p class="mt-5 mb-3 text-muted">&copy; Desenvolvido por Elaine Pelizari</p>    

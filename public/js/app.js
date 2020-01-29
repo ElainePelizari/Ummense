@@ -53213,8 +53213,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
-vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]); // window.Vue.use(VueRouter);
-
+window.Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 
 Vue.use(vue_axios__WEBPACK_IMPORTED_MODULE_1___default.a, axios__WEBPACK_IMPORTED_MODULE_2___default.a);
@@ -53236,11 +53235,11 @@ var routes = [{
   name: 'editProduct'
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
-  mode: 'history'
+  routes: routes
 });
-var app = new Vue(Vue.util.extend({
+var app = new Vue({
   router: router
-})).$mount('#app');
+}).$mount('#app');
 
 /***/ }),
 
@@ -53272,6 +53271,7 @@ try {
 
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
